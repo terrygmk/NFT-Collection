@@ -50,9 +50,9 @@ async function main() {
 
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
-// main().catch((error) => {
-//   console.error(error);
-//   process.exitCode = 1;
-// });
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
 
-verify("0xA3f42497b66cfeaBa13777ad4c4d560fe606888a",[ METADATA_URL, WHITELIST_CONTRACT_ADDRESS])
+// verify("0xA3f42497b66cfeaBa13777ad4c4d560fe606888a",[ METADATA_URL, WHITELIST_CONTRACT_ADDRESS])
