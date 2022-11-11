@@ -39,16 +39,18 @@ contract CryptoDevs is ERC721Enumerable, Ownable {
     require(block.timestamp < presaleEnded, "Presale has ended");
     require(tokenIds < maxTokenIds, "All tokens have been minted");
     require(_price == msg.value, "Incorrect amount sent");
-    _safeMint(msg.sender, tokenIds);
     tokenIds++;
+    _safeMint(msg.sender, tokenIds);
+    
   }
 
   function mint() public payable onlyWhenNotPaused {
     require(presaleStarted && block.timestamp > presaleEnded, "Presale has not ended");
     require(tokenIds < maxTokenIds, "All tokens have been minted");
     require(_price == msg.value, "Incorrect amount sent");
-    _safeMint(msg.sender, tokenIds);
     tokenIds++;
+    _safeMint(msg.sender, tokenIds);
+    
   }
 
   function _baseURI() internal view virtual override returns (string memory) {
